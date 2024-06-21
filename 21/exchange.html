@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <main>
+        <div id="container">
+
+        </div>
+    </main>
+    <script>
+       
+
+       let div=  document.createElement("div");
+        div.style.margin = "10px"
+       let input = document.createElement('input');
+      let button = document.createElement("button");
+
+       let main = document.getElementById("container");
+       main.style.display ="flex";
+       main.style.flexDirection ="column";
+
+
+      
+ 
+       let formdiv = main.appendChild(div);
+       formdiv.append(input);
+       formdiv.append(button);
+        button.type ="submit"
+        button.innerHTML = "chick me!"
+        button.style.padding = "10px"
+        input.type = "text";
+        input.style.marginRight = "20px"
+        input.style.padding = "10px"
+        input.placeholder = "Enter the new task";
+
+        let row =  document.createElement("div");
+        let addrow = main.appendChild(row);
+        addrow.style.width = "100%";
+        addrow.style.border = "1px solid"  
+        addrow.style.display = "flex"; 
+
+
+        let rightdiv=  document.createElement("div");
+        let mainright = addrow.appendChild(rightdiv);
+        mainright.style.width = "40%";
+        mainright.style.border = "1px solid"
+        let ul = document.createElement("ul");
+        let ulset = mainright.appendChild(ul);
+       
+
+       button.addEventListener('click',function(){
+        let addlast = input.value.trim();
+        if(addlast !== ''){
+            let li = document.createElement("li");
+            li.textContent =addlast;
+            ulset.appendChild(li);
+            input.value = "";
+        }
+        else{
+            alert("not value please anter the new task and submit")
+        }
+       })
+
+
+       
+       let centerdiv=  document.createElement("div");
+       let centersetdiv = addrow.appendChild(centerdiv);
+       centersetdiv.style.width = "10%";
+       centersetdiv.style.border = "1px solid"
+       centersetdiv.style.display = "flex";
+       centersetdiv.style.flexDirection = "column";
+       centersetdiv.style.gap = "30px";
+       centersetdiv.style.paddingTop = "10px";
+
+
+       let buttontop = document.createElement("button");
+       let buttonbottom = document.createElement("button");
+
+       buttontop.type = "button";
+       buttonbottom.type = "button";
+       buttontop.innerHTML = " -> ";
+       buttonbottom.innerHTML = " <- ";
+       buttontop.style.fontSize = "20px";
+       buttonbottom.style.fontSize = "20px";
+       centersetdiv.appendChild(buttontop);
+       centersetdiv.appendChild(buttonbottom);
+  
+       
+
+
+    </script>
+
+    
+</body>
+</html>
