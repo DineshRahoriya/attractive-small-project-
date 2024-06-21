@@ -4,40 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinite Slider</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            overflow: hidden;
-        }
-        main {
-            height: 10vh;
-            width: 100vw;
-            overflow: hidden;
-            display: flex;
-            position: relative;
-        }
-        .containerBox {
-            display: inline-flex;
-          
-            animation: scroll 10s linear infinite;
-        }
-        .containerBox > * {
-            flex: none;
-            margin-right: 20px;
-        }
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <main>
