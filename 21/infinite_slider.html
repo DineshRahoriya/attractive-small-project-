@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Slider</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            overflow: hidden;
+        }
+        main {
+            height: 10vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            position: relative;
+        }
+        .containerBox {
+            display: inline-flex;
+          
+            animation: scroll 10s linear infinite;
+        }
+        .containerBox > * {
+            flex: none;
+            margin-right: 20px;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="containerBox">
+            <h1>hello12335678901</h1>
+            <h1>hello1233567890</h1>
+            <h1>hello123356789</h1>
+            <h1>hello12335678</h1>
+               <h1> hello1233567</h1>
+                <h1>hello123356</h1>
+                <h1>hello12335</h1>
+                <h1>hello1233</h1>
+                <h1>hello123</h1>
+                <h1>hello123</h1>
+                <h1>hello12</h1>
+                <h1>hello1</h1>
+      
+                <h1>hello12335678901</h1>
+                <h1>hello1233567890</h1>
+                <h1>hello123356789</h1>
+                <h1>hello12335678</h1>
+                <h1>hello1233567</h1>
+                <h1>hello123356</h1>
+                <h1>hello12335</h1>
+                <h1>hello1233</h1>
+                <h1>hello123</h1>
+                <h1>hello123</h1>
+                <h1>hello12</h1>
+                <h1>hello1</h1>
+            </div>
+        </main>
+    </body>
+    </html>
+    
