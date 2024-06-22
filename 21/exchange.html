@@ -50,15 +50,26 @@
         mainright.style.width = "40%";
         mainright.style.border = "1px solid"
         let ul = document.createElement("ul");
+     
         let ulset = mainright.appendChild(ul);
        
 
        button.addEventListener('click',function(){
         let addlast = input.value.trim();
         if(addlast !== ''){
+
+            let newitemsrow = document.createElement("div");
+            newitemsrow.style.display = "flex";
+            ulset.appendChild(newitemsrow);
             let li = document.createElement("li");
             li.textContent =addlast;
-            ulset.appendChild(li);
+            li.style.listStyleType ="none";
+
+            let checkboxinput = document.createElement("input");
+            checkboxinput.type ="checkbox";
+            checkboxinput.className = "allcheckbox";
+            newitemsrow.appendChild(checkboxinput);
+            newitemsrow.appendChild(li);
             input.value = "";
         }
         else{
@@ -82,6 +93,7 @@
        let buttonbottom = document.createElement("button");
 
        buttontop.type = "button";
+       buttontop.className = "topdelete"
        buttonbottom.type = "button";
        buttontop.innerHTML = " -> ";
        buttonbottom.innerHTML = " <- ";
@@ -91,6 +103,23 @@
        centersetdiv.appendChild(buttonbottom);
   
        
+
+   let checkboxvalue =  document.querySelectorAll(".allcheckbox");
+   let buttontops = document.querySelectorAll(".topdelete");
+  
+   
+buttontops.forEach(button => {
+    button.addEventListener('click', function() {
+        let checkedCheckboxes = document.querySelectorAll(".allcheckbox:checked");
+
+        checkedCheckboxes.forEach(checkbox => {
+            checkbox.parentElement.remove();
+        });
+    });
+
+    
+});
+
 
 
     </script>

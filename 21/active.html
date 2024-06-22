@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <button  class="act">home</button>
+    <button  class="act" >home</button>
     <button  class="act">about</button>
     <button class="act">blog</button>
     <button  class="act">page</button>
@@ -23,9 +23,9 @@
     <script>
         let seclect = document.querySelectorAll(".act");
 
-        seclect.forEach(function(add){
-            add.addEventListener('click',function(alll){
-                seclect.forEach(function(ev){
+        seclect.forEach((add)=>{
+            add.addEventListener('click',function(){
+                seclect.forEach((ev)=>{
                     ev.classList.remove("active")
                 })
                 add.classList.add("active")
