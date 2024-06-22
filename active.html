@@ -1,0 +1,37 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.active{
+    background-color:#e71a1a;
+}
+    </style>
+</head>
+<body>
+    <button  class="act">home</button>
+    <button  class="act">about</button>
+    <button class="act">blog</button>
+    <button  class="act">page</button>
+    <button  class="act">contact</button>
+
+    <script>
+        let seclect = document.querySelectorAll(".act");
+
+        seclect.forEach(function(add){
+            add.addEventListener('click',function(alll){
+                seclect.forEach(function(ev){
+                    ev.classList.remove("active")
+                })
+                add.classList.add("active")
+            })
+        })
+    </script>
+    
+</body>
+</html>
