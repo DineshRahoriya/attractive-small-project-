@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecommerce project</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script  src="json.json"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <nav id="alldatashow">
+                <button onclick="showAll()">Show All</button>
+                <button id="eyepin" onclick="product('eyepin')">Rose Gold Eye Pin</button>
+                <button id="hoops" onclick="product('hoops')">Hoops</button>
+                <button id="Ring" onclick="product('Ring')">Rings</button>
+                <button id="bellcaps" onclick="product('bellcaps')">Bell Caps</button>
+            </nav>
+        </header>
+
+        <div class="allcard" id="allcard">
+           
+            <div  class="active card" id="card">
+               
+            </div>
+        </div>
+    </main>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

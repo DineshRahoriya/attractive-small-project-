@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Content on Button Click</title>
+    <style>
+        .container {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .container.active {
+            display: block;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            float: left;
+        }
+        .main-container {
+            margin-left: 220px;
+        }
+        button {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="showAll()">Show All</button>
+        <button onclick="showContainer('container1')">Show Container 1</button>
+        <button onclick="showContainer('container2')">Show Container 2</button>
+        <button onclick="showContainer('container3')">Show Container 3</button>
+        <button onclick="showContainer('container4')">Show Container 4</button>
+        <button onclick="showContainer('container5')">Show Container 5</button>
+    </div>
+
+    <div class="main-container" id="mainContainer">
+    </div>
+
+    <script>
+        var jsonData = [
+            {
+                id: 'container1',
+                title: 'Container 1',
+                content: 'This is the content of Container 1.'
+            },
+            {
+                id: 'container2',
+                title: 'Container 2',
+                content: 'This is the content of Container 2.'
+            },
+            {
+                id: 'container3',
+                title: 'Container 3',
+                content: 'This is the content of Container 3.'
+            },
+            {
+                id: 'container4',
+                title: 'Container 4',
+                content: 'This is the content of Container 4.'
+            },
+            {
+                id: 'container5',
+                title: 'Container 5',
+                content: 'This is the content of Container 5.'
+            }
+        ];
+        function populateContainers() {
+            var mainContainer = document.getElementById('mainContainer');
+            mainContainer.innerHTML = '';
+
+            jsonData.forEach(function(item) {
+                var container = document.createElement('div');
+                container.id = item.id;
+                container.className = 'container active';
+
+                var title = document.createElement('h2');
+                title.textContent = item.title;
+
+                var content = document.createElement('p');
+                content.textContent = item.content;
+
+                container.appendChild(title);
+                container.appendChild(content);
+
+                mainContainer.appendChild(container);
+            });
+        }
+        function showContainer(containerId) {
+            var containers = document.querySelectorAll('.container');
+            containers.forEach(function(container) {
+                container.classList.remove('active');
+            });
+            var selectedContainer = document.getElementById(containerId);
+            selectedContainer.classList.add('active');
+        }
+        
+        function showAll() {
+            var containers = document.querySelectorAll('.container');
+            containers.forEach(function(container) {
+                container.classList.add('active');
+            });
+        }
+        populateContainers();
+    </script>
+</body>
+</html>
